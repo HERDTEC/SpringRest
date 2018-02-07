@@ -48,7 +48,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialecst
 
 ````
 
-5. Integrar Swagger a Proyecto
+## Integrar Swagger a Proyecto
 
 1. Instalar las dependencias
 ````
