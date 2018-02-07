@@ -110,4 +110,5 @@ public class ApplicationConfig {
 * @ApiResponse: Se usa para explicar respuestas de la operación
 
 **Anotaciones de Modelo**
+
  Anotación @ApiModelProperty para describir las propiedades de la clase POJO (Bean).
