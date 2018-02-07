@@ -111,4 +111,4 @@ public class ApplicationConfig {
 
 **Anotaciones de Modelo**
 
- Anotación @ApiModelProperty para describir las propiedades de la clase POJO (Bean).
+* @ApiModelProperty: describir las propiedades de la clase POJO (Bean).
