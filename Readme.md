@@ -100,3 +100,14 @@ public class ApplicationConfig {
 4. Abrir la url 
 
 `http://localhost:8090/app-root/swagger-ui.html`
+
+5. Usar las siguientes anotacion
+
+**Anotaciones de Controller**
+
+* @Api: se usa para explicar cada clase de controlador.
+* @ApiOperation: se usa para explicar los recursos y métodos.
+* @ApiResponse: Se usa para explicar respuestas de la operación
+
+**Anotaciones de Modelo**
+ Anotación @ApiModelProperty para describir las propiedades de la clase POJO (Bean).
