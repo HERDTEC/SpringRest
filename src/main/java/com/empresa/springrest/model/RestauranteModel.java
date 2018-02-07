@@ -2,10 +2,15 @@ package com.empresa.springrest.model;
 
 import com.empresa.springrest.entity.Restaurante;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class RestauranteModel {
 	private long idRestaurante;
+	@ApiModelProperty(notes = "Provided the category of restaurant", required =true)
 	private long idCategoria;
+	 @ApiModelProperty(notes = "Provided the name of restaurant", required =true)
 	private String restaurante;
+	 @ApiModelProperty(notes = "Provided the direction of restaurant", required =true)
 	private String direccion;
 	public RestauranteModel(Restaurante restaurante) {
 		this.idRestaurante = restaurante.getIdRestaurante();

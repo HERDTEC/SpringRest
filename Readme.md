@@ -1,4 +1,13 @@
 # Api Rest con Spring
+## Comandos Utiles
+### Matar proceso del servidor
+1. Desplegar un proceso dado un puerto
+
+	lsof -i:8080
+	
+2. Matar al proceso con el comando kill
+
+	kill PID
 ## Requisitos
 1. Tener Instalado los repositorios de maven
 2. Intsalar Spring Tools
@@ -39,4 +48,55 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialecst
 
 ````
 
-5.
+5. Integrar Swagger a Proyecto
+
+1. Instalar las dependencias
+````
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger2</artifactId>
+	<version>2.7.0</version>
+</dependency>
+
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger-ui</artifactId>
+	<version>2.7.0</version>
+</dependency>
+````
+2. Crear un clase ApplicationConfig y remplazar el base package asi como la informacion general del API.
+
+```` java
+@Configuration
+@EnableSwagger2
+
+public class ApplicationConfig {
+
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.empresa.springrest.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+    private ApiInfo getApiInfo() {
+        Contact contact = new Contact("Paul Cuichan", "http://nodisponible.com", "ing.paul.cuixan@gmail.com");
+        return new ApiInfoBuilder()
+                .title("Example Api Title")
+                .description("Example Api Definition")
+                .version("1.0.0")
+                .license("Apache 2.0")
+                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
+                .contact(contact)
+                .build();
+    }
+}
+````
+3. En el archivo application.properties especificar el app root de la aplicacion:
+
+`server.contextPath= /app-root`
+
+4. Abrir la url 
+
+`http://localhost:8090/app-root/swagger-ui.html`
