@@ -12,7 +12,7 @@ import com.empresa.springrest.entity.Restaurante;
 import com.empresa.springrest.model.RestauranteModel;
 import com.empresa.springrest.repository.RestauranteRepository;
 
-@Service("RestauranteService")
+@Service("restauranteService")
 public class RestauranteService {
 	@Autowired
 	@Qualifier("restauranteRepository")

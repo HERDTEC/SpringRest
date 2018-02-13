@@ -112,3 +112,10 @@ public class ApplicationConfig {
 **Anotaciones de Modelo**
 
 * @ApiModelProperty: describir las propiedades de la clase POJO (Bean).
+
+## Spring Security
+1. Anadir las dependencias maven
+
+````
+
+````
